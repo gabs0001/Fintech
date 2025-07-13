@@ -1,0 +1,19 @@
+.textarea-scroll {
+    overflow-y: auto;
+    resize: none;
+}
+
+.msg-container-objetivos {
+    font-size: 1.8rem;
+    margin-top: 9.6rem;
+}
+
+.form-container-objetivos { margin-top: 2.4rem; }
+
+.btn-cadastro-objetivo {
+    background-color: var(--btn-actions);
+    width: 17.2rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+}

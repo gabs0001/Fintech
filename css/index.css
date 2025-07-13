@@ -1,0 +1,41 @@
+.option-genero { color: var(--item-color); }
+
+.msg-container-login {
+    font-size: 1.8rem;
+    margin-top: 8.4rem;
+}
+
+.btn-cadastro, .btn-login {
+    width: 14.8rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+}
+
+.btn-cadastro { background-color: var(--btn-actions); }
+
+.btn-login { background-color: #872341; }
+
+.form-container-login { margin-top: 2.4rem; }
+
+@media (min-width: 992px) {
+    input[name="nome"],
+    input[name="dtNascimento"],
+    select[name="genero"],
+    input[name="email"],
+    input[name="senha"],
+    input[name="confirmaSenha"] {
+        max-width: 40rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    input[name="nome"],
+    input[name="dtNascimento"],
+    select[name="genero"],
+    input[name="email"],
+    input[name="senha"],
+    input[name="confirmaSenha"] {
+        max-width: 31.6rem;
+    }
+}

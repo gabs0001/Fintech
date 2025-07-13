@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Recebimentos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="../../css/globals.css">
+    <link rel="stylesheet" href="../../css/recebimentos/recebimentos.css">
+</head>
+
+<body>
+
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg nav-container" data-bs-theme="dark">
+            <div class="container-fluid py-3">
+                <a href="../../index.html" class="text-color">Fintech</a>
+                <button 
+                    class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarSuportedContent" 
+                    aria-controls="navbarSuportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSuportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4 menu-itens">
+                        <li class="nav-item">
+                            <a href="../gastos/gerenciar-gastos.html" class="nav-link">Gastos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./gerenciar-recebimentos.html" class="nav-link">Recebimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../investimentos/gerenciar-investimentos.html" class="nav-link">Investimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../objetivos-financeiros/gerenciar-objetivos-financeiros.html" class="nav-link">Meus Objetivos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex form-search" role="search">
+                        <input id="pesquisa-header" type="search" class="form-control me-2 input-controller" placeholder="O que você está procurando?" aria-label="Pesquisar">
+                        <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <section class="container text-center msg-container-recebimentos">
+                    <h2>Cadastre aqui seu novo recebimento!</h2>
+                </section>
+            </div>
+        </div>
+
+        <section class="container form-container-recebimentos">
+            <form action="" method="post" name="form-container-recebimentos" id="form-container-recebimentos">
+                
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-7 col-lg-5 col-xl-5 col-xxl-5">
+                        <div class="my-3 d-md-flex gap-3">
+                            <label for="tipo-recebimento" class="form-label text-nowrap mt-md-2">Tipo de recebimento:</label>
+                            <select name="tipo-recebimento" id="tipo-recebimento" class="form-select input-controller" required>
+                                <option class="option-tipo-recebimento" value="0" disabled selected>Selecione um tipo</option>
+                                <option class="option-tipo-recebimento" value="1">Salário</option>
+                                <option class="option-tipo-recebimento" value="2">Rendimentos</option>
+                                <option class="option-tipo-recebimento" value="3">Auxilio Governamental</option>
+                                <option class="option-tipo-recebimento" value="4">Seguro-desemprego</option>
+                                <option class="option-tipo-recebimento" value="5">Aluguel</option>
+                                <option class="option-tipo-recebimento" value="6">Transferências</option>
+                                <option class="option-tipo-recebimento" value="7">Poupança</option>
+                                <option class="option-tipo-recebimento" value="8">Outros</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-7 col-lg-5 col-xl-5 nova-categoria-recebimento" id="novaCategoriaDiv">
+                        <div class="my-3 d-md-flex gap-md-3">
+                            <label for="outros" class="form-label text-nowrap">Digite a categoria:</label>
+                            <input type="text" name="outros" id="outros" class="form-control input-controller">
+                            <button class="btn btn-primary my-2" id="btn-adicionar">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                    
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-7 col-lg-5 col-xl-5">
+                        <div class="my-3">
+                            <label for="descricao-recebimento" class="form-label">Descrição:</label>
+                            <textarea name="descricao-recebimento" id="descricao-recebimento" class="form-control input-controller textarea-scroll" rows="4" placeholder="Digite sua descrição aqui..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-7 col-lg-5 col-xl-5">
+                        <div class="my-3 d-md-flex gap-3">
+                            <label for="valor-recebimento" class="form-label mt-md-2">Valor:</label>
+                            <input id="valor-recebimento" name="valor-recebimento" type="number" class="form-control input-controller" placeholder="Digite o valor" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-5 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+                        <div class="my-3 d-md-flex gap-3">
+                            <label for="dt-recebimento" class="form-label mt-md-2">Data:</label>
+                            <input id="dt-recebimento" name="dt-recebimento" type="date" class="form-control input-controller" required>
+                        </div>
+                    </div>
+                    
+                    <div class="col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                        <div class="my-3 d-md-flex gap-3">
+                            <label for="hora-recebimento" class="form-label mt-md-2">Hora:</label>
+                            <input id="hora-recebimento" name="hora-recebimento" type="time" class="form-control input-controller" placeholder="digite a hora" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-10 d-flex justify-content-center my-5">
+                        <a href="" class="rounded-5 d-flex justify-content-center align-items-center text-center text-nowrap btn-cadastro-recebimento" role="button">
+                            Adicionar Recebimento
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid bg-dark py-5 d-flex align-items-center justify-content-center footer-container">
+            <p class="text-center">© 2025 Fintech - Todos os direitos reservados</p>
+    </footer>
+
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous">
+    </script>
+
+    <script type="module" src="../../js/index.js"></script>
+    <script type="module" src="../../js/recebimentos/recebimentos.js"></script>
+</body>
+
+</html>

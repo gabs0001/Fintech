@@ -1,0 +1,70 @@
+.msg-container-dashboard {
+    font-size: 1.8rem;
+    margin: 4.8rem 0;
+}
+
+.msg-container-dashboard h2:nth-of-type(2) { border: 1px solid rgba(255, 255, 255, .5); }
+
+.form-container-dashboard { margin-top: 2.4rem; }
+
+.main-container-dashboard {
+    margin-top: 4.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.form-container-cards { 
+    background-color: rgba(7, 122, 125, .2);
+    border: 1px solid rgba(255, 255, 255, .5) !important;
+    height: 23rem;
+    overflow-y: auto;
+}
+
+.form-container-cards h3 { text-align: center; }
+
+.form-container-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+    border: 1px solid rgba(255, 255, 255, .5);
+    margin: 1.2rem .4rem;
+    padding: .8rem 0;
+}
+
+.form-container-card span img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.btn-detalhes {
+    width: 12rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+    background-color: var(--btn-actions);
+    border: none;
+
+    &:hover {
+        background-color: #05595B;
+        transform: scale(1.05);
+        transition: transform .3s ease-in;
+    }
+}
+
+#valor-saldo-mes { padding-right: 2rem; }
+
+@media (min-width: 768px) { .btn-detalhes { width: 14rem; } }
+
+@media (min-width: 576px) {
+    .form-container-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #valor-saldo-mes { padding-right: 0; }
+}

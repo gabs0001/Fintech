@@ -1,0 +1,80 @@
+td, .table-container {
+    background-color: rgba(7, 122, 125, .2) !important;
+    color: #f5eedd !important;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+th { font-size: 1.6rem; }
+
+th, td {
+  border: 1px solid var(--item-color);
+  text-align: center;
+}
+
+td img {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+
+.btn-cadastro-investimento {
+    width: 17.2rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+    background-color: var(--btn-actions);
+
+    &:hover {
+        background-color: #05595B;
+        transform: scale(1.05);
+        transition: transform .3s ease-in;
+    }
+}
+
+.msg-container-investimentos {
+    font-size: 1.8rem;
+    margin: 4.8rem auto;
+}
+
+.form-container-investimentos { margin-top: 2.4rem; }
+
+.option-tipo-investimento { color: var(--item-color); }
+
+.main-container-investimentos {
+    margin-top: 4.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.table-container { 
+    border: 1px solid rgba(245, 238, 221, .6); 
+    border-radius: .4rem;
+    height: 48rem;
+    width: 100%;
+    overflow: auto;
+}
+
+.table-header > th {
+    background-color: rgba(122, 226, 207, .5);
+    color: var(--item-color);
+}
+
+.titulos-card {
+    background-color: rgba(122, 226, 207, .5);
+}
+
+.card-controller {
+    color: var(--item-color);
+    background-color: rgba(7, 122, 125, .2);
+}
+
+.display-titulo, .display-celula  { display: none; }
+
+@media (min-width: 992px) { .display-titulo, .display-celula  { display: table-cell; } }
+
+@media (min-width: 576px) {
+    input[name="buscaPorNome"],
+    select {
+        max-width: 30rem;
+    }
+}

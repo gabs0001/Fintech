@@ -1,0 +1,161 @@
+td, .table-container {
+    background-color: rgba(7, 122, 125, .2) !important;
+    color: #f5eedd !important;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+th { font-size: 1.6rem; }
+
+th, td {
+  border: 1px solid var(--item-color);
+  text-align: center;
+}
+
+td img {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+
+.btn-adicionar-gasto {
+    width: 17.2rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+    background-color: var(--btn-actions);
+
+    &:hover {
+        background-color: #05595B;
+        transform: scale(1.05);
+        transition: transform .3s ease-in;
+    }
+}
+
+.msg-container-gastos {
+    font-size: 1.8rem;
+    margin: 4.8rem auto;
+}
+
+.form-container-gastos { margin-top: 2.4rem; }
+
+.option-categoria-gasto { color: var(--item-color); }
+
+.main-container-gastos {
+    margin-top: 4.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.table-container { 
+    border: 1px solid rgba(245, 238, 221, .6); 
+    border-radius: .4rem;
+    height: 48rem;
+    width: 100%;
+    overflow: auto;
+}
+
+.table-header > th {
+    background-color: rgba(122, 226, 207, .5);
+    color: var(--item-color);
+}
+
+.titulos-card {
+    background-color: rgba(122, 226, 207, .5);
+}
+
+.card-controller {
+    color: var(--item-color);
+    background-color: rgba(7, 122, 125, .2);
+}
+
+
+/* drawer lateral */
+.descricao { position: relative; }
+
+.linha-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.preview {
+  flex-grow: 1;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ver-mais {
+  margin-left: 1rem;
+  color: #f5eedd;
+  cursor: pointer;
+  font-weight: bold;
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -35rem;
+    width: 35rem;
+    height: 100%;
+    background-color: #077a7d;
+    box-shadow: -.3rem 0 .8rem rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 9999;
+}
+
+#descricaoDrawer { margin-top: 2rem; }
+
+.drawer.ativo { right: 0; }
+
+.fechar-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+#btnFechar { 
+    width: 17.2rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+    background-color: var(--btn-actions);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0b6b6d;
+        transform: scale(1.05);
+        transition: transform .3s ease-in;
+    }
+}
+/* fim drawer lateral */
+
+@media (min-width: 768px) { 
+    .display-titulo, .display-celula  { display: table-cell !important; } 
+    .preview { max-width: 19.4rem; }
+}
+
+@media (min-width: 576px) {
+    input[name="buscaPorNome"],
+    select {
+        max-width: 30rem;
+    }
+    .display-titulo, .display-celula  { display: none; }
+    .preview { max-width: 12.3rem; }
+}

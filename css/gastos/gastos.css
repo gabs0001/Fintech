@@ -1,0 +1,25 @@
+/* cadastro de gastos */
+.option-tipo-gasto { color: var(--item-color); }
+
+.nova-categoria-gasto { display: none; }
+
+.textarea-scroll {
+    overflow-y: auto;
+    resize: none;
+}
+
+.msg-container-gastos {
+    font-size: 1.8rem;
+    margin-top: 9.6rem;
+}
+
+.form-container-gastos { margin-top: 2.4rem; }
+
+#outros {
+    height: 2.6rem;
+    margin-top: .4rem;
+}
+
+.nova-categoria-gasto div label { margin-top: .8rem; }
+
+/* cadastro de gastos */

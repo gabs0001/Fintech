@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Gastos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="../../css/globals.css">
+    <link rel="stylesheet" href="../../css/gastos/gerenciar-gastos.css">
+</head>
+
+<body>
+
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg nav-container" data-bs-theme="dark">
+            <div class="container-fluid py-3">
+                <a href="../../index.html" class="text-color">Fintech</a>
+                <button 
+                    class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarSuportedContent" 
+                    aria-controls="navbarSuportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSuportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4 menu-itens">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Gastos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../recebimentos/gerenciar-recebimentos.html" class="nav-link">Recebimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../investimentos/gerenciar-investimentos.html" class="nav-link">Investimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../objetivos-financeiros/gerenciar-objetivos-financeiros.html" class="nav-link">Meus Objetivos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex form-search" role="search">
+                        <input 
+                            id="pesquisa-header" type="search" 
+                            class="form-control me-2 input-controller" placeholder="O que você está procurando?" 
+                            aria-label="Pesquisar"
+                        >
+                        <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid mx-auto main-container-gastos">
+
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <section class="container text-center msg-container-gastos">
+                    <h2>Aqui você encontra todos os seus gastos!</h2>
+                </section>
+            </div>
+        </div>
+
+        <section class="container form-container-gastos">
+            <form action="" method="post" name="form-gastos" id="form-gastos">
+                
+                <!------------------------- filtragem ------------------------->
+                <div class="row justify-content-center">
+                    <div class="mb-2 col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4">
+                        <div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                            <label for="filtrarPorNome" class="form-label text-nowrap mt-2 lb-controller">
+                                Filtrar por:
+                            </label>
+                            <select name="filtrarPorNome" id="filtrarPorNome" class="form-select me-md-2 ms-sm-3 input-controller" required>
+                                <option class="option-categoria-gasto" value="0" disabled selected>Selecione uma categoria</option>
+                                <option class="option-categoria-gasto" value="1">Moradia</option>
+                                <option class="option-categoria-gasto" value="2">Alimentação</option>
+                                <option class="option-categoria-gasto" value="3">Transporte</option>
+                                <option class="option-categoria-gasto" value="4">Saúde</option>
+                                <option class="option-categoria-gasto" value="5">Educação</option>
+                                <option class="option-categoria-gasto" value="6">Lazer e entretenimento</option>
+                                <option class="option-categoria-gasto" value="7">Vestuário e beleza</option>
+                                <option class="option-categoria-gasto" value="8">Contas e serviços</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-2">
+                        <div class="my-3 my-sm-1 
+                                    d-flex justify-content-start gap-4
+                                    d-sm-flex
+                                    d-md-flex justify-content-md-evenly
+                                    d-lg-flex 
+                                    d-xl-flex">
+                            <div>
+                                <input id="valor-gasto" name="valor-gasto" type="radio" class="form-check-input">
+                                <label for="valor-gasto" class="form-check-label ms-1 lb-controller">Valor</label>
+                            </div>
+                            <div>
+                                <input id="data-gasto" name="data-gasto" type="radio" class="form-check-input">
+                                <label for="data-gasto" class="form-check-label ms-1 lb-controller">Data</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------- fim filtragem ------------------------->
+
+                <div class="row justify-content-center">
+                    
+                    <div class="col-12 col-sm-10 col-md-10 col-lg-9 col-xl-8">
+                        <!------------------------- tabela principal ------------------------->
+                        <div class="my-5 table-container d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block">
+                            <table class="table text-nowrap">
+                                <thead>
+                                    <tr class="table-header">
+                                        <th>Categoria</th>
+                                        <th>Descrição</th>
+                                        <th>Valor</th>
+                                        <th class="display-titulo">Data</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aluguel</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes do Aluguel" 
+                                            data-completo="Aluguel mensal referente ao apartamento localizado na Av. Paulista, nº 1000. Valor de R$ 1.500,00 com vencimento dia 05."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Aluguel mensal referente ao apartamento localizado na Av. Paulista, nº 1000. Valor de R$ 1.500,00 com vencimento dia 05.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 1500,00</td>
+                                        <td class="display-celula">20/04/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transporte</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes de Transporte" 
+                                            data-completo="Transporte para o trabalho via fretado empresarial da Zona Sul para o Centro. Valor mensal de R$ 320,00 com embarque às 07h."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Transporte para o trabalho via fretado empresarial da Zona Sul para o Centro. Valor mensal de R$ 320,00 com embarque às 07h.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 320,00</td>
+                                        <td class="display-celula">02/03/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Academia</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes da Academia" 
+                                            data-completo="Mensalidade de academia Fitness Life, plano completo com acesso à musculação, aulas coletivas e piscina aquecida. Valor de R$ 230,00 mensais."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Mensalidade de academia Fitness Life, plano completo com acesso à musculação, aulas coletivas e piscina aquecida. Valor de R$ 230,00 mensais.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 230,00</td>
+                                        <td class="display-celula">15/02/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- drawer lateral -->
+                            <div id="drawer" class="drawer">
+                                <span class="fechar-icon">×</span>
+                                <h2 id="tituloDrawer"></h2>
+                                <p id="descricaoDrawer"></p>
+                                <button type="button" id="btnFechar">Fechar</button>
+                            </div>
+                            <!-- fim drawer lateral -->
+
+                        </div>
+                        <!------------------------- fim tabela principal ------------------------->
+
+                        <!------------------------- container de cards ------------------------->
+                        <div class="card-container text-nowrap d-block justify-content-evenly d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Gasto 1</h3>
+                                            <p class="card-text"><strong>Categoria: </strong>Aluguel</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 1500,00</p>
+                                            <p class="card-text"><strong>Data: </strong>20/04/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Gasto 2</h3>
+                                            <p class="card-text"><strong>Categoria: </strong>Transporte</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 320,00</p>
+                                            <p class="card-text"><strong>Data: </strong>02/03/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-10">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Gasto 3</h3>
+                                            <p class="card-text"><strong>Categoria: </strong>Academia</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 230,00</p>
+                                            <p class="card-text"><strong>Data: </strong>15/02/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!------------------------- fim container de cards ------------------------->
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center my-3">
+                        <a 
+                            href="./gastos.html"
+                            class=" rounded-5 d-flex justify-content-center align-items-center text-center btn-adicionar-gasto" 
+                            role="button"
+                        >
+                            Novo Gasto
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid bg-dark py-5 d-flex align-items-center justify-content-center footer-container">
+            <p class="text-center">© 2025 Fintech - Todos os direitos reservados</p>
+    </footer>
+
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="../../js/utils/drawer-lateral.js"></script>
+</body>
+
+</html>

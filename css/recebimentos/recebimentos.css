@@ -1,0 +1,33 @@
+/* cadastro de gastos */
+.option-tipo-recebimento { color: var(--item-color); }
+
+.nova-categoria-recebimento { display: none; }
+
+.textarea-scroll {
+    overflow-y: auto;
+    resize: none;
+}
+
+.msg-container-recebimentos {
+    font-size: 1.8rem;
+    margin-top: 9.6rem;
+}
+
+.form-container-recebimentos { margin-top: 2.4rem; }
+
+.nova-categoria-recebimento div label { margin-top: .8rem; }
+
+.btn-cadastro-recebimento {
+    background-color: var(--btn-actions);
+    width: 18.4rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    color: var(--item-color);
+}
+
+#outros {
+    height: 2.6rem;
+    margin-top: .4rem;
+}
+
+/* cadastro de recebimentos */

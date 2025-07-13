@@ -1,0 +1,89 @@
+* {
+    font-family: "Instrument Sans", sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+:root {
+    --background: #06202b;
+    --item-color: #F5EEDD;
+    --btn-actions: #077A7D;
+    --background-inputs: #343F57;
+    --border-elements: 1px solid rgba(245, 238, 221, .3);
+    --elements-opacity: rgba(245, 238, 221, .4);
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+html { font-size: 62.5%; }
+
+body { 
+    font-size: 1.6rem; 
+    background-color: var(--background);
+    color: var(--item-color);
+}
+
+header, footer {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header { height: 2.4rem !important; }
+
+li { list-style: none; }
+
+a { 
+    text-decoration: none;
+    font-size: 2.4rem;
+}
+
+input, textarea { color: var(--item-color) !important; }
+
+input::placeholder, textarea::placeholder { color: var(--elements-opacity) !important; }
+
+input[type="date"]::-webkit-calendar-picker-indicator, 
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="password"]::-ms-reveal, 
+input[type="password"]::-webkit-credentials-auto-fill-button { filter: invert(70%) !important; }
+
+#pesquisa-header { border: var(--border-elements); }
+
+input:focus, textarea:focus { background-color: #2A3347 !important; }
+
+.input-controller { background-color: var(--background-inputs); }
+
+.lb-controller {
+    font-size: 1.4rem !important;
+    font-weight: 500;
+}
+
+label { font-size: 1.2rem !important; }
+
+select {
+    color: var(--item-color) !important;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: right 4px center !important;
+    background-size: 1.6rem !important;
+}
+
+.nav-container { background-color: #263238 !important; }
+
+.form-search input { width: 18rem; }
+
+.form-search button { width: 6rem; }
+
+.text-color { color: var(--item-color); }
+
+.menu-itens li { font-size: 1.4rem; }
+
+.menu-itens li:hover { text-decoration: underline; }
+
+.footer-container { margin-top: 2.4rem !important; }
+
+.footer-container p { font-size: 1.6rem; }

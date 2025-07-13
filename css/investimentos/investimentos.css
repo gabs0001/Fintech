@@ -1,0 +1,43 @@
+/* cadastro de gastos */
+.option-tipo-investimento { color: var(--item-color); }
+
+.nova-categoria-investimento { display: none; }
+
+.textarea-scroll {
+    overflow-y: auto;
+    resize: none;
+}
+
+.msg-container-investimentos {
+    font-size: 1.8rem;
+    margin-top: 9.6rem;
+}
+
+.form-container-investimentos { margin-top: 2.4rem; }
+
+.btn-adicionar-investimento {
+    width: 15.4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    color: var(--item-color);
+    background-color: var(--btn-actions);
+}
+
+@media (min-width: 768px) {
+    select[name="tipo-investimento"], 
+    input[name="nomeInvestimento"], 
+    input[name="valorInvestimento"], 
+    select[name="tipo-instituicao"], 
+    input[name="dt-investimento"], 
+    input[name="dt-vencimento-investimento"],
+    #outros {
+        width: 30rem;
+    }
+
+    #outros {
+        height: 2.6rem;
+        margin-top: .3rem;
+    }
+
+    .nova-categoria-investimento div label { margin-top: .7rem; }
+}

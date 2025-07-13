@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Objetivos Financeiros</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="../../css/globals.css">
+    <link rel="stylesheet" href="../../css/objetivos-financeiros/gerenciar-objetivos-financeiros.css">
+</head>
+
+<body>
+
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg nav-container" data-bs-theme="dark">
+            <div class="container-fluid py-3">
+                <a href="../../index.html" class="text-color">Fintech</a>
+                <button 
+                    class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarSuportedContent" 
+                    aria-controls="navbarSuportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSuportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4 menu-itens">
+                        <li class="nav-item">
+                            <a href="../gastos/gerenciar-gastos.html" class="nav-link">Gastos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../recebimentos/gerenciar-recebimentos.html" class="nav-link">Recebimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../investimentos/gerenciar-investimentos.html" class="nav-link">Investimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Meus Objetivos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex form-search" role="search">
+                        <input 
+                            id="pesquisa-header" type="search" 
+                            class="form-control me-2 input-controller" placeholder="O que você está procurando?" 
+                            aria-label="Pesquisar"
+                        >
+                        <button class="btn btn-primary" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid mx-auto main-container-objetivos">
+        
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <section class="container text-center msg-container-objetivos">
+                    <h2>Aqui você encontra todos os seus objetivos financeiros!</h2>
+                </section>
+            </div>
+        </div>
+
+        <section class="container form-container-objetivos">
+            <form action="" method="post" name="form-objetivos" id="form-objetivos">
+                
+                <!------------------------- filtragem ------------------------->
+                <div class="row justify-content-center">
+                    
+                    <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4">
+                        <div class="d-sm-flex">
+                            <label for="busca" class="form-label mt-2 me-3 text-nowrap lb-controller">Pesquisar</label>
+                            <input type="search" name="busca" id="busca" class="form-control input-controller" placeholder="Digite o nome do seu objetivo">
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+                        <div class="my-3 my-sm-2 
+                                    d-flex justify-content-start gap-4
+                                    d-sm-flex justify-content-sm-evenly
+                                    d-md-flex justify-content-md-evenly
+                                    d-lg-flex 
+                                    d-xl-flex">
+                            <div>
+                                <input id="valor-gasto" name="valor-gasto" type="radio" class="form-check-input">
+                                <label for="valor-gasto" class="form-check-label ms-1 lb-controller">Valor</label>
+                            </div>
+                            <div>
+                                <input id="data-gasto" name="data-gasto" type="radio" class="form-check-input">
+                                <label for="data-gasto" class="form-check-label ms-1 lb-controller">Data</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------- fim filtragem ------------------------->
+
+                <div class="row justify-content-center">
+                    
+                    <div class="col-10 col-sm-11 col-md-10 col-lg-9 col-xl-8">
+                        <!------------------------- tabela principal ------------------------->
+                        <div class="my-5 table-container d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block">
+                            <table class="table text-nowrap">
+                                <thead>
+                                    <tr class="table-header">
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Valor</th>
+                                        <th class="display-titulo">Data</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Reserva</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes da Reserva" 
+                                            data-completo="Valor de R$ 1.000,00 destinado à reserva emergencial, transferido para a poupança no dia 20/04 para cobertura de imprevistos financeiros."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Valor de R$ 1.000,00 destinado à reserva emergencial, transferido para a poupança no dia 20/04 para cobertura de imprevistos financeiros.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 1000,00</td>
+                                        <td class="display-celula">20/04/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reforma</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes da Reforma" 
+                                            data-completo="Investimento de R$ 3.000,00 aplicado na reforma da casa, incluindo troca de pisos, pintura e renovação elétrica. Pagamento realizado em 02/03."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Investimento de R$ 3.000,00 aplicado na reforma da casa, incluindo troca de pisos, pintura e renovação elétrica. Pagamento realizado em 02/03.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 3000,00</td>
+                                        <td class="display-celula">02/03/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Viagem</td>
+                                        <!-- --------------------- -->
+                                        <td class="descricao" 
+                                            data-titulo="Detalhes da Viagem" 
+                                            data-completo="Despesa de R$ 4.500,00 referente à viagem em família para Florianópolis, cobrindo hospedagem, transporte e alimentação. Saída prevista para 15/02."
+                                        >
+                                            <div class="linha-preview">
+                                                <span class="preview">
+                                                    Despesa de R$ 4.500,00 referente à viagem em família para Florianópolis, cobrindo hospedagem, transporte e alimentação. Saída prevista para 15/02.
+                                                </span>
+                                                <span class="ver-mais">ver mais</span>
+                                            </div>
+                                        </td>
+                                        <!-- --------------------- -->
+                                        <td>R$ 4500,00</td>
+                                        <td class="display-celula">15/02/2024</td>
+                                        <td class="d-flex justify-content-center gap-3">
+                                            <span>
+                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                            </span>
+                                            <span>
+                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- drawer lateral -->
+                            <div id="drawer" class="drawer">
+                                <span class="fechar-icon">×</span>
+                                <h2 id="tituloDrawer"></h2>
+                                <p id="descricaoDrawer"></p>
+                                <button type="button" id="btnFechar">Fechar</button>
+                            </div>
+                            <!-- fim drawer lateral -->
+
+                        </div>
+                        <!------------------------- fim tabela principal ------------------------->
+
+                        <!------------------------- container de cards ------------------------->
+                        <div class="card-container text-nowrap d-block justify-content-evenly d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Objetivo 1</h3>
+                                            <p class="card-text"><strong>Nome: </strong>Reserva</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 1000,00</p>
+                                            <p class="card-text"><strong>Data: </strong>20/04/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Objetivo 2</h3>
+                                            <p class="card-text"><strong>Nome: </strong>Reforma</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 3000,00</p>
+                                            <p class="card-text"><strong>Data: </strong>02/03/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <div class="card mb-4 border card-controller">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center py-2 titulos-card">Objetivo 3</h3>
+                                            <p class="card-text"><strong>Nome: </strong>Viagem</p>
+                                            <p class="card-text"><strong>Valor: </strong>R$ 4500,00</p>
+                                            <p class="card-text"><strong>Data: </strong>15/02/2024</p>
+                                            <hr/>
+                                            <div class="d-flex justify-content-center gap-4">
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">
+                                                    <span>
+                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!------------------------- fim container de cards ------------------------->
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center my-3">
+                        <a 
+                            href="./objetivos-financeiros.html" 
+                            class=" rounded-5 d-flex justify-content-center align-items-center text-center btn-adicionar-objetivo" 
+                            role="button"
+                        >
+                            Novo Objetivo
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid bg-dark py-5 d-flex align-items-center justify-content-center footer-container">
+        <p class="text-center">
+            © 2025 Fintech - Todos os direitos reservados
+        </p>
+    </footer>
+
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="../../js/utils/drawer-lateral.js"></script>
+</body>
+
+</html>
