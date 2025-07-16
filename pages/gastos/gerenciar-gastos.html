@@ -85,7 +85,7 @@
                 
                 <!------------------------- filtragem ------------------------->
                 <div class="row justify-content-center">
-                    <div class="mb-2 col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4">
+                    <div class="mb-2 col-10 col-sm-6 col-md-6 col-lg-5 col-xl-4">
                         <div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex">
                             <label for="filtrarPorNome" class="form-label text-nowrap mt-2 lb-controller">
                                 Filtrar por:
@@ -103,8 +103,8 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-2">
+    
+                    <div class="col-10 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                         <div class="my-3 my-sm-1 
                                     d-flex justify-content-start gap-4
                                     d-sm-flex
@@ -142,7 +142,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Aluguel</td>
-                                        <!-- --------------------- -->
                                         <td class="descricao" 
                                             data-titulo="Detalhes do Aluguel" 
                                             data-completo="Aluguel mensal referente ao apartamento localizado na Av. Paulista, nº 1000. Valor de R$ 1.500,00 com vencimento dia 05."
@@ -154,15 +153,14 @@
                                                 <span class="ver-mais">ver mais</span>
                                             </div>
                                         </td>
-                                        <!-- --------------------- -->
                                         <td>R$ 1500,00</td>
                                         <td class="display-celula">20/04/2024</td>
                                         <td class="d-flex justify-content-center gap-3">
                                             <span>
-                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                                <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                             </span>
                                             <span>
-                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                                <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                             </span>
                                         </td>
                                     </tr>
@@ -185,10 +183,10 @@
                                         <td class="display-celula">02/03/2024</td>
                                         <td class="d-flex justify-content-center gap-3">
                                             <span>
-                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                                <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                             </span>
                                             <span>
-                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                                <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                             </span>
                                         </td>
                                     </tr>
@@ -211,27 +209,87 @@
                                         <td class="display-celula">15/02/2024</td>
                                         <td class="d-flex justify-content-center gap-3">
                                             <span>
-                                                <img src="../../img/icons/edit.svg" alt="editar">
+                                                <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                             </span>
                                             <span>
-                                                <img src="../../img/icons/delete.svg" alt="excluir">
+                                                <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                             </span>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-
-                            <!-- drawer lateral -->
-                            <div id="drawer" class="drawer">
-                                <span class="fechar-icon">×</span>
-                                <h2 id="tituloDrawer"></h2>
-                                <p id="descricaoDrawer"></p>
-                                <button type="button" id="btnFechar">Fechar</button>
-                            </div>
-                            <!-- fim drawer lateral -->
-
                         </div>
                         <!------------------------- fim tabela principal ------------------------->
+
+                        <!-- drawer lateral -->
+                        <div id="drawer" class="drawer">
+                            <span class="fechar-icon">×</span>
+                            <h2 id="tituloDrawer"></h2>
+                            <p id="descricaoDrawer"></p>
+                            <button type="button" id="btnFechar">Fechar</button>
+                        </div>
+                        <!-- fim drawer lateral -->
+
+                        <!-- overlay -->
+                        <div id="overlay" class="overlay"></div>
+                        <!-- fim overlay -->
+
+                        <!-- janela pop-up -->
+                        <section id="janela__popup" class="container mb-4 janela__popup">
+                            <form>
+
+                                <div class="d-flex justify-content-end">
+                                    <span id="fechar-popup">x</span>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                                        <div>
+                                            <label for="editar-categoria" class="form-label lb-controller">Categoria</label>
+                                            <input id="editar-categoria" name="editar-categoria" type="text" class="form-control input-controller">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                                        <div class="my-2">
+                                            <label for="editar-descricao" class="form-label lb-controller">Descrição</label>
+                                            <textarea id="editar-descricao" name="editar-descricao" class="form-control input-controller" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                                        <div class="my-2">
+                                            <label for="editar-valor" class="form-label lb-controller">Valor</label>
+                                            <input id="editar-valor" name="editar-valor" type="number" class="form-control input-controller">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                                        <div class="my-2">
+                                            <label for="editar-data" class="form-label lb-controller">Data</label>
+                                            <input id="editar-data" name="editar-data" type="date" class="form-control input-controller" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+                                        <div class="my-4 d-flex justify-content-center gap-4">
+                                            <button id="btn-cancelar-edicao" class="btn btn-action">Cancelar</button>
+                                            <button id="btn-salvar-edicao" class="btn btn-action">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </section>
+                        <!-- fim janela pop-up -->
 
                         <!------------------------- container de cards ------------------------->
                         <div class="card-container text-nowrap d-block justify-content-evenly d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
@@ -247,12 +305,12 @@
                                             <div class="d-flex justify-content-center gap-4">
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                        <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                                     </span>
                                                 </p>
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                        <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                                     </span>
                                                 </p>
                                             </div>
@@ -273,12 +331,12 @@
                                             <div class="d-flex justify-content-center gap-4">
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                        <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                                     </span>
                                                 </p>
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                        <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                                     </span>
                                                 </p>
                                             </div>
@@ -299,12 +357,12 @@
                                             <div class="d-flex justify-content-center gap-4">
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/edit.svg" alt="editar">
+                                                        <img src="../../img/icons/edit.svg" alt="editar" data-edit>
                                                     </span>
                                                 </p>
                                                 <p class="card-text">
                                                     <span>
-                                                        <img src="../../img/icons/delete.svg" alt="excluir">
+                                                        <img src="../../img/icons/delete.svg" alt="excluir" data-delete>
                                                     </span>
                                                 </p>
                                             </div>
@@ -347,6 +405,7 @@
     </script>
 
     <script src="../../js/utils/drawer-lateral.js"></script>
+    <script type="module" src="../../js/gastos/gerenciar-gastos.js"></script>
 </body>
 
 </html>

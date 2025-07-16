@@ -146,16 +146,68 @@ td img {
 }
 /* fim drawer lateral */
 
+/* janela popup */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9998;
+}
+
+.overlay.ativo { display: block; }
+
+.janela__popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0d787c;
+    border: 1px solid rgba(221, 221, 221, .5);
+    border-radius: 4px;
+    max-width: 83%;
+    padding: 2rem;
+    z-index: 9999;
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
+}
+
+.janela__popup.ativo { display: block; }
+
+.btn-action {
+    background-color: #0aa6ab;
+    color: var(--item-color);
+    width: 8rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+    &:hover { background-color: #075e61; }
+}
+
+#fechar-popup { cursor: pointer; }
+/* fim janela popup */
+
+@media (min-width: 992px) {
+    .janela__popup { max-width: 65% !important; }
+}
+
 @media (min-width: 768px) { 
     .display-titulo, .display-celula  { display: table-cell !important; } 
+    
     .preview { max-width: 19.4rem; }
+
+    .janela__popup { max-width: 75%; }
 }
 
 @media (min-width: 576px) {
-    input[name="buscaPorNome"],
-    select {
-        max-width: 30rem;
-    }
+    input[name="buscaPorNome"], select { max-width: 30rem; }
+
     .display-titulo, .display-celula  { display: none; }
+
     .preview { max-width: 12.3rem; }
 }
