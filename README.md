@@ -1,6 +1,6 @@
 # 💰 Fintech — Gerenciador de Finanças Pessoais
 
-Este projeto acadêmico foi desenvolvido como parte da graduação em ADS da FIAP com o objetivo de praticar os conhecimentos em **HTML, CSS, Bootstrap e JavaScript**. O Fintech é uma aplicação web para o gerenciamento das finanças pessoais de um usuário, com funcionalidades que facilitam o acompanhamento de **recebimentos, investimentos, gastos e objetivos financeiros**.
+Este projeto acadêmico está sendo desenvolvido como parte da graduação em ADS da FIAP com o objetivo de praticar os conhecimentos em **HTML, CSS, Bootstrap e JavaScript**. O Fintech é uma aplicação web para o gerenciamento das finanças pessoais de um usuário, com funcionalidades que facilitam o acompanhamento de **recebimentos, investimentos, gastos e objetivos financeiros**.
 
 ## 📌 Funcionalidades
 
